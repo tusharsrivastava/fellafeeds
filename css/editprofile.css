@@ -1,0 +1,139 @@
+.cover {
+    background: #ece000;
+    height: 170px;
+    width: 100%;
+}
+
+.profile-pic-container {
+    text-align: center;
+    position: relative;
+    top: -80px;
+    margin-bottom: -80px;
+}
+
+.profile-pic-container .profile-pic-border {
+    border: 7px solid rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    border-radius: 50%;
+    height: 159px;
+    width: 159px;
+}
+
+.profile-pic-container .profile-pic {
+    display: inline-block;
+    height: 145px;
+    width: 145px;
+    border-radius: 50%;
+    background: url("../images/demo.png");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+
+.profile-pic-container .upload-btn-conatiner {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.profile-pic-container .upload-btn {
+    background: #f2fd00;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 2.2px;
+    font-weight: 600;
+}
+
+.profile-details {
+    text-align: center;
+}
+
+.profile-details .name,
+.profile-details .email,
+.profile-details .mobile {
+    color: #605f7a;
+}
+
+.profile-details .email,
+.profile-details .mobile {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.ad-container {
+    margin-top: 20px;
+}
+
+.ad-container .dob,
+.ad-container .anniversary {
+    display: inline-block;
+    text-align: center;
+    width: 49%;
+}
+
+.ad-container .dob p,
+.ad-container .anniversary p {
+    color: #999;
+    font-size: 16px;
+}
+
+.ad-container .dob h4,
+.ad-container .anniversary h4 {
+    font-size: 20px;
+    color: #615f72;
+}
+
+.form {
+    padding: 20px;
+}
+
+.form .form-item {
+    margin-bottom: 20px;
+}
+
+.form .form-item label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+}
+
+.form .form-item input {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    font-size: 18px;
+    color: #605f7a;
+}
+
+.form .form-item select {
+    display: inline-block;
+    width: 32.5%;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    font-size: 18px;
+    color: #605f7a;
+}
+
+.form hr.divider {
+    border: none;
+    border-top: 1px solid #777;
+}
+
+.form .save-btn {
+    display: block;
+    width: 100%;
+    background: #f2fd00;
+    border: none;
+    padding: 15px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 2.2px;
+    font-weight: 600;
+}

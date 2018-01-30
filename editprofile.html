@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Angular Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    
+    <!-- Bootstrap Library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/ccccf69ad7.js"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/editprofile.css">
+
+<body>
+
+    <div ng-app="">
+        <div class="container-fluid cover"></div>
+        <div class="profile-pic-container">
+            <div class="profile-pic-border">
+                <div class="profile-pic"></div>
+            </div>
+            <div class="upload-btn-conatiner">
+                <button class="upload-btn">Upload</button>
+            </div>
+        </div>
+        <div class="form">
+            <div class="form-item">
+                <label>Full name</label>
+                <input type="text" value="Ravi Shankar Bilochi">
+            </div>
+            <div class="form-item">
+                <label>Email address</label>
+                <input type="email" value="ravi.shanakr.bilochi@gmail.com">
+            </div>
+            <div class="form-item">
+                <label>Contact Number</label>
+                <input type="number" value="9999999999">
+            </div>
+            <div class="form-item">
+                <label>Date of Birth</label>
+                <div class="calender">
+                    <select>
+                        <option>DD</option>
+                        <option>01</option>
+                    </select>
+                    <select>
+                        <option>MM</option>
+                        <option>01</option>
+                    </select>
+                    <select>
+                        <option>YYYY</option>
+                        <option>1900</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-item">
+                <label>Anniversary</label>
+                <div class="calender">
+                    <select>
+                        <option>DD</option>
+                        <option>01</option>
+                    </select>
+                    <select>
+                        <option>MM</option>
+                        <option>01</option>
+                    </select>
+                    <select>
+                        <option>YYYY</option>
+                        <option>1900</option>
+                    </select>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="form-item">
+                <label>Password</label>
+                <input type="password" value="lsdkfjlsdkjf">
+            </div>
+            <div class="form-item">
+                <button class="save-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

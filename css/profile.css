@@ -1,0 +1,80 @@
+.cover {
+    background: #ece000;
+    height: 170px;
+    width: 100%;
+}
+
+.cover .settings-button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: none;
+    color: #fff;
+    font-size: 40px;
+    border: none;
+}
+
+.profile-pic-container {
+    text-align: center;
+    position: relative;
+    top: -80px;
+    margin-bottom: -80px;
+}
+
+.profile-pic-container .profile-pic-border {
+    border: 7px solid rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    border-radius: 50%;
+    height: 169px;
+    width: 169px;
+}
+
+.profile-pic-container .profile-pic {
+    display: inline-block;
+    height: 155px;
+    width: 155px;
+    border-radius: 50%;
+    background: url("../images/demo.png");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+
+.profile-details {
+    text-align: center;
+}
+
+.profile-details .name,
+.profile-details .email,
+.profile-details .mobile {
+    color: #605f7a;
+}
+
+.profile-details .email,
+.profile-details .mobile {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.ad-container {
+    margin-top: 20px;
+}
+
+.ad-container .dob,
+.ad-container .anniversary {
+    display: inline-block;
+    text-align: center;
+    width: 49%;
+}
+
+.ad-container .dob p,
+.ad-container .anniversary p {
+    color: #999;
+    font-size: 16px;
+}
+
+.ad-container .dob h4,
+.ad-container .anniversary h4 {
+    font-size: 20px;
+    color: #615f72;
+}

@@ -1,0 +1,210 @@
+body * {
+    font-family: 'Open Sans';
+    margin: 0;
+    padding: 0;
+}
+
+.wallet-point-container {
+    background: linear-gradient(to bottom, #C2BDEC 0%, #A7ABED 100%);
+    width: 100%;
+    padding: 25px 12px 60px;
+}
+
+.wallet-point {
+    background: #f5f4f9;
+    border-radius: 3px;
+    padding: 12px;
+}
+
+.wallet-point .wallet-col {
+    display: inline-block;
+}
+
+.wallet-col .wallet-coin-img {
+    background: url("../images/demo.png");
+    background-size: cover;
+    height: 70px;
+    width: 70px;
+    margin-right: 10px;
+    border-radius: 30px 35px 20px 20px;
+}
+
+.wallet-point .wallet-col:last-child {
+    width: 60%;
+    padding-left: 5px;
+    position: relative;
+    top: -8px;
+
+}
+
+.wallet-point .wallet-col:last-child p {
+    color: #999;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.wallet-point .wallet-col:last-child h1 {
+    color: #555;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.tabs-container {
+    position: relative;
+    text-align: center;
+    top: -25px;
+}
+
+.tabs-container .tab-shadow {
+    display: inline-block;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.tabs-container .tab {
+    display: inline-block;
+    background: #f9f8fb;
+    padding: 15px 15px;
+    margin-right: -4px;
+    border-right: none;
+}
+
+.tabs-container .tab .tab-icon {
+    background: url("../images/demo.png");
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px 35px 20px 20px;
+    display: inline-block;
+}
+
+.tabs-container .tab:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.tabs-container .tab.active {
+    background: #f2fd00;
+    color: #444;
+}
+
+.tabs-container .tab:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.tabs-container .tab h4 {
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.4px;
+    display: inline-block;
+    position: relative;
+    top: -8px;
+    left: 2px;
+}
+
+.content {
+    padding: 30px;
+    padding-top: 0px;
+}
+
+.content .cards {
+    background: #faf9fc;
+    padding: 10px 0;
+    padding-bottom: 3px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 1px 4px 11px -5px rgba(0, 0, 0, 0.35), -2px 1px 11px -6px rgba(0, 0, 0, 0.3);
+}
+
+.cards .product-img {
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    border-radius: 7px;
+    border: 1px solid #ccccd5;
+    background: url('../images/demo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cards .title {
+    position: relative;
+    display: inline-block;
+    color: #615f72;
+    top: -16px;
+    margin-left: 10px;
+    font-size: 27px;
+}
+
+.cards .address {
+    position: relative;
+    color: #888;
+    font-weight: 600;
+    font-size: 15px;
+    padding-left: 95px;
+    top: -41px;
+}
+
+.cards .time {
+    position: relative;
+    color: #888;
+    font-weight: 400;
+    font-size: 15px;
+    padding-left: 95px;
+    top: -36px;
+}
+
+.cards .store-point-text {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 20px;
+    color: #555;
+    width: 70%;
+    height: 50px;
+    position: absolute;
+    top: -5px;
+}
+
+.cards .store-point {
+    color: #615f72;
+    font-weight: 400;
+    width: 25%;
+    text-align: right;
+    position: relative;
+    float: right;
+    top: -12px;
+}
+
+.cards .reedem-btn-container {
+    padding: 0 15px;
+}
+
+.cards .redeem-btn {
+    display: block;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 2.2px;
+    font-weight: 600;
+    margin: 35px 0 10px;
+}
+
+.cards .redeem-btn.redeemed {
+    background: #e8e6f3;
+}
+
+.cards .redeem-btn.expired {
+    background: #4d4b53;
+    color: #fafafa;
+}
+
+.cards .redeem-btn.open {
+    background: #f2fd00;
+}
