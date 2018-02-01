@@ -12,7 +12,8 @@ app.controller('fellaController', function($scope, $http) {
     //     console.log($scope.transactions);
     // });
 
-    $scope.storeDetails = {
+    $scope.storeDetails = [
+        {
             "storepoints": [
                 {
                     "id" : 1,
@@ -26,7 +27,8 @@ app.controller('fellaController', function($scope, $http) {
                 }
             ],
             "totalpoint" : 960
-        };
+        }
+    ];
 
     $scope.transactions = [
         {
@@ -60,7 +62,7 @@ app.controller('fellaController', function($scope, $http) {
     });
 
     $scope.transactions.forEach(trans => {
-        $scope.storeDetails.storepoints.forEach(element => {
+        $scope.storeDetails[0].storepoints.forEach(element => {
             if(element.id==trans.id) {
                 trans.storeName = element.store;
                 console.log("store: ", element.store);

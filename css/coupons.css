@@ -131,10 +131,10 @@ body * {
 }
 
 .cards .title {
-    position: relative;
+    position: absolute;
     display: inline-block;
     color: #615f72;
-    top: -16px;
+    top: 2px;
     margin-left: 10px;
     font-size: 27px;
 }
