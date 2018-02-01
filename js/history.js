@@ -1,4 +1,4 @@
-app.controller('fellaController', function($scope, $http) {
+app.controller('fellaController', function($scope, $http, $window) {
 
     // $http.get("http://54.156.18.72/feedbacker/getredeemstore")
     // .then(function(response) {
@@ -70,5 +70,16 @@ app.controller('fellaController', function($scope, $http) {
         });
     });
 
-    console.log($scope.transactions);
+    $scope.showHistory = function() {
+        $window.location.href = '/history.html';
+    }
+
+    $scope.showCoupons = function() {
+        $window.location.href = '/coupons.html';
+    }
+
+    $scope.showHome = function() {
+        $window.location.href = '/index.html';
+    }
+
 });

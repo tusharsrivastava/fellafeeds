@@ -56,16 +56,16 @@
                         <label>Date of Birth</label>
                         <div class="calender">
                             <select>
-                                <option>DD</option>
-                                <option>01</option>
+                                <option>{{dobDay}}</option>
+                                <option ng-repeat="dd in day">{{dd}}</option>
                             </select>
                             <select>
-                                <option>MM</option>
-                                <option>01</option>
+                                <option>{{dobMonth}}</option>
+                                <option ng-repeat="mm in month">{{mm}}</option>
                             </select>
                             <select>
-                                <option>YYYY</option>
-                                <option>1900</option>
+                                <option>{{dobYear}}</option>
+                                <option ng-repeat="yyyy in year">{{yyyy}}</option>
                             </select>
                         </div>
                     </div>
@@ -73,16 +73,16 @@
                         <label>Anniversary</label>
                         <div class="calender">
                             <select>
-                                <option>DD</option>
-                                <option>01</option>
+                                <option>{{anniDay}}</option>
+                                <option ng-repeat="dd in day">{{dd}}</option>
                             </select>
                             <select>
-                                <option>MM</option>
-                                <option>01</option>
+                                <option>{{anniMonth}}</option>
+                                <option ng-repeat="mm in month">{{mm}}</option>
                             </select>
                             <select>
-                                <option>YYYY</option>
-                                <option>1900</option>
+                                <option>{{anniYear}}</option>
+                                <option ng-repeat="yyyy in year">{{yyyy}}</option>
                             </select>
                         </div>
                     </div>

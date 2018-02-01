@@ -1,9 +1,33 @@
-app.controller('fellaController', function($scope, $http) {
-    // $http.get("http://54.156.18.72/feedbacker/gettransaction")
+app.controller('fellaController', function($scope, $http, $window) {
+    $http.get("http://54.156.18.72/feedbacker/gettransaction")
+    .then(function(response) {
+        $scope.couponData = response.data;
+        console.log($scope.couponData);
+    });
+
+    // $http.get("http://54.156.18.72/feedbacker/getredeemstore")
     // .then(function(response) {
-    //     $scope.couponData = response.data;
-    //     console.log($scope.couponData);
+    //     $scope.storeDetails = response.data;
+    //     console.log($scope.storeDetails);
     // });
+
+    $scope.storeDetails = [
+        {
+            "storepoints": [
+                {
+                    "id" : 1,
+                    "store" : "Ravi Bar and Bistro",
+                    "point" : 960
+                },
+                {
+                    "id" : 3,
+                    "store" : "Infinity Shark",
+                    "point" : 1000
+                }
+            ],
+            "totalpoint" : 960
+        }
+    ];
 
     $scope.storeDetails = [
         {
@@ -60,5 +84,17 @@ app.controller('fellaController', function($scope, $http) {
             }
         });
     });
+
+    $scope.showHistory = function() {
+        $window.location.href = '/history.html';
+    }
+
+    $scope.showCoupons = function() {
+        $window.location.href = '/coupons.html';
+    }
+
+    $scope.showHome = function() {
+        $window.location.href = '/index.html';
+    }
 
 });

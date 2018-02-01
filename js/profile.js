@@ -1,4 +1,4 @@
-app.controller('fellaController', function($scope, $http) {
+app.controller('fellaController', function($scope, $http, $window) {
     // $http.get("http://54.156.18.72/feedbacker/userprofile")
     // .then(function(response) {
     //     $scope.profileData = response.data;
@@ -13,5 +13,7 @@ app.controller('fellaController', function($scope, $http) {
         "email": ""
     }
 
-    console.log($scope.profileData);
+    $scope.showEditProfile = function() {
+        $window.location.href = '/editprofile.html';
+    }
 });

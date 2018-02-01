@@ -31,17 +31,17 @@
             </div>
             <div class="wallet-col">
                 <p>Wallet Points</p>
-                <h1>2100</h1>
+                <h1>{{storeDetails[0].totalpoint}}</h1>
             </div>
         </div>
     </div>
     <div class="tabs-container">
         <div class="tab-shadow">
-            <div class="tab">
+            <div class="tab" ng-click="showHome()">
                 <div class="tab-icon"></div>
                 <h4>Offers</h4>
             </div>
-            <div class="tab">
+            <div class="tab" ng-click="showHistory()">
                 <div class="tab-icon"></div>
                 <h4>History</h4>
             </div>
@@ -61,7 +61,7 @@
                 <h5 class="time">{{coupon.created}}</h5>
             </div>
             <div class="col-sm-6">
-                    <p class="store-point-text">Bought 4 items</p>
+                    <!-- <p class="store-point-text">Bought 4 items</p> -->
                 <h1 class="store-point">-{{coupon.points}}</h1>
             </div>
             <div class="reedem-btn-container">

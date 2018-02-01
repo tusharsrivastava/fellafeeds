@@ -34,18 +34,17 @@
             </div>
             <div class="wallet-col">
                 <p>Wallet Points</p>
-                <h1>2100</h1>
+                <h1>{{storeDetails[0].totalpoint}}</h1>
             </div>
         </div>
     </div>
     <div class="tabs-container">
         <div class="tab-shadow">
             <div class="tab">
-                <i class="fa fa-arrow-left back-arrow"></i>
+                <i class="fa fa-arrow-left back-arrow" ng-click="viewHome()"></i>
                 <div class="store-detail">
                     <div class="tab-img"></div>
-                    <h4>Saravana Bhawan</h4>
-                    <h5>New Delhi, 0.4Km</h5>
+                    <h4>{{storeName}}</h4>
                 </div>
             </div>
         </div>
@@ -58,47 +57,22 @@
         <h3>Check in with facebook to earn 100 points</h3>
     </div>
 
-
-    <div class="cards row" ng-repeat="product in products[0].data">
-        <div class="col-sm-6">
-            <img class="product-img">
-            <h2 class="title">{{product.product_name}}</h2>
-        </div>
-        <div class="col-sm-6">
-            <p class="cost">Cost:</p>
-            <h1 class="store-point">{{product.product_point}}</h1>
-            <button class="buy-button">Buy</button>
-            <div class="buy-button" style="display:none;"></div>
-        </div>
-    </div>
-
-    <div class="cards row" ng-class="1==1 ? 'active' : ''">
-        <div class="col-sm-6">
-            <img class="product-img">
-            <h2 class="title">Salad Mix</h2>
-        </div>
-        <div class="col-sm-6">
-            <p class="cost">Cost:</p>
-            <h1 class="store-point">50</h1>
-            <button class="buy-button" style="display:none;">Buy</button>
-            <div class="buy-button-active">
-                <button class="plus">-</button>
-                <button class="quantity">2</button>
-                <button class="minus">+</button>
+    <div ng-repeat="product in products[0].data">
+        <div class="cards row" ng-class="buy[product.product_id]==true?'active':''">
+            <div class="col-sm-6">
+                <img class="product-img">
+                <h2 class="title">{{product.product_name}}</h2>
             </div>
-        </div>
-    </div>
-
-    <div class="cards row">
-        <div class="col-sm-6">
-            <img class="product-img">
-            <h2 class="title">Salad Mix</h2>
-        </div>
-        <div class="col-sm-6">
-            <p class="cost">Cost:</p>
-            <h1 class="store-point">50</h1>
-            <button class="buy-button">Buy</button>
-            <div class="buy-button" style="display:none;"></div>
+            <div class="col-sm-6">
+                <p class="cost">Cost:</p>
+                <h1 class="store-point">{{product.product_point}}</h1>
+                <button class="buy-button" ng-hide="buy[product.product_id]" ng-click="buyClicked(product.product_id)">Buy</button>
+                <div class="buy-button-active" ng-hide="!buy[product.product_id]">
+                    <button class="minus" ng-click="remove(product.product_id, product.product_point)">-</button>
+                    <button class="quantity">{{quantity[product.product_id]}}</button>
+                    <button class="plus" ng-click="add(product.product_id, product.product_point, product.max_quantity)">+</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -106,9 +80,9 @@
 
 <div class="container-fluid checkout">
     <div class="row">
-            <h3>4 items</h3>
-            <h1>750 <span>points</span></h1>
-            <button class="checkout-btn">Checkout</button>
+            <h3>{{totalCheckoutItem}} items</h3>
+            <h1>{{totalCheckoutPoints}} <span>points</span></h1>
+            <button class="checkout-btn" ng-click="checkoutFunc()">Checkout</button>
     </div>
 </div>
 
