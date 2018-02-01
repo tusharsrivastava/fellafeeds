@@ -31,7 +31,7 @@
             </div>
             <div class="wallet-col">
                 <p>Wallet Points</p>
-                <h1>{{storeDetails.totalpoint}}</h1>
+                <h1>{{storeDetails[0].totalpoint}}</h1>
             </div>
         </div>
     </div>
@@ -54,15 +54,15 @@
 
 <div class="container-fluid content">
 
-        <div class="cards row" ng-repeat="stores in storeDetails">
+        <div class="cards row" ng-repeat="stores in storeDetails[0].storepoints">
             <div class="col-sm-6">
                 <img class="product-img">
-                <h2 class="title">{{stores[0].store}}</h2>
+                <h2 class="title">{{stores.store}}</h2>
                 <!-- <h5 class="address">New Delhi, 0.4Km</h5> -->
             </div>
             <div class="col-sm-6">
                 <p class="store-point-text">Your<br>Store<br>Points</p>
-                <h1 class="store-point">{{stores[0].point}}</h1>
+                <h1 class="store-point">{{stores.point}}</h1>
                 <button class="view-button">View</button>
             </div>
         </div>

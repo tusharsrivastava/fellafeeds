@@ -17,7 +17,6 @@
     <!-- Js Files -->
     <script src="js/app.js"></script>
     <script src="js/history.js"></script>
-    <script src="js/index.js"></script>
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/history.css">
@@ -55,42 +54,15 @@
 
 <div class="container-fluid content">
 
-        <div class="cards row">
+        <div class="cards row" ng-repeat="trans in transactions">
             <div class="col-sm-6">
                 <img class="product-img">
-                <h2 class="title">Saravana Bhawan</h2>
-                <h5 class="address">New Delhi, 0.4Km</h5>
-                <h5 class="time">Today, 08:40AM</h5>
+                <h2 class="title">{{trans.storeName}}</h2>
+                <h5 class="time">{{trans.created}}</h5>
             </div>
             <div class="col-sm-6">
-                <p class="store-point-text">For the billing of Rs. 513/-, 50 points were credited</p>
-                <h1 class="store-point">+50</h1>
-            </div>
-        </div>
-    
-        <div class="cards row">
-            <div class="col-sm-6">
-                <img class="product-img">
-                <h2 class="title">Saravana Bhawan</h2>
-                <h5 class="address">New Delhi, 0.4Km</h5>
-                <h5 class="time">Today, 08:40AM</h5>
-            </div>
-            <div class="col-sm-6">
-                <p class="store-point-text">Bought 4 items</p>
-                <h1 class="store-point">-750</h1>
-            </div>
-        </div>
-    
-        <div class="cards row">
-            <div class="col-sm-6">
-                <img class="product-img">
-                <h2 class="title">Saravana Bhawan</h2>
-                <h5 class="address">New Delhi, 0.4Km</h5>
-                <h5 class="time">Today, 08:40AM</h5>
-            </div>
-            <div class="col-sm-6">
-                <p class="store-point-text">For the billing of Rs. 513/-, 50 points were credited</p>
-                <h1 class="store-point">+50</h1>
+                <p class="store-point-text">{{trans.description}}</p>
+                <h1 class="store-point">{{trans.symbol}}{{trans.points}}</h1>
             </div>
         </div>
     

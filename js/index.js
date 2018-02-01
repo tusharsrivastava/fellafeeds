@@ -5,16 +5,25 @@ app.controller('fellaController', function($scope, $http) {
     //     console.log($scope.storeDetails);
     // });
 
-    $scope.storeDetails = {
-        "storepoints": [
-            {
-                "id" : 1,
-                "store" : "Ravi Bar and Bistro",
-                "point" : 960
-            }
-        ],
-        "totalpoint" : 960
-    }
+    $scope.storeDetails = [
+        {
+            "storepoints": [
+                {
+                    "id" : 1,
+                    "store" : "Ravi Bar and Bistro",
+                    "point" : 960
+                },
+                {
+                    "id" : 3,
+                    "store" : "Infinity Shark",
+                    "point" : 1000
+                }
+            ],
+            "totalpoint" : 960
+        }
+    ];
 
-    console.log($scope.storeDetails.storepoints[0].store);
+    $scope.storeDetails[0].storepoints.forEach(element => {
+        console.log(element.store);
+    });
 });
