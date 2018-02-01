@@ -130,10 +130,10 @@ body * {
 }
 
 .cards .title {
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    display: inline;
     color: #615f72;
-    top: -10px;
+    top: 2px;
     margin-left: 10px;
 }
 
@@ -151,6 +151,7 @@ body * {
     font-weight: 300;
     font-size: 16px;
     line-height: 18px;
+    margin-top: 10px;
     color: #555;
 }
 
@@ -174,5 +175,16 @@ body * {
     letter-spacing: 2.2px;
     font-weight: 600;
     float: right;
-    top: 10px;
+    top: 15px;
+}
+
+@media(min-width: 767px) {
+    .cards .store-point-text {
+        margin-top: 20px;
+    }
+
+    .cards .view-button {
+        margin-top: 20px;
+    }
+
 }

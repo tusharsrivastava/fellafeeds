@@ -54,41 +54,15 @@
 
 <div class="container-fluid content">
 
-        <div class="cards row">
+        <div class="cards row" ng-repeat="stores in storeDetails">
             <div class="col-sm-6">
                 <img class="product-img">
-                <h2 class="title">Saravana Bhawan</h2>
-                <h5 class="address">New Delhi, 0.4Km</h5>
+                <h2 class="title">{{stores[0].store}}</h2>
+                <!-- <h5 class="address">New Delhi, 0.4Km</h5> -->
             </div>
             <div class="col-sm-6">
                 <p class="store-point-text">Your<br>Store<br>Points</p>
-                <h1 class="store-point">50</h1>
-                <button class="view-button">View</button>
-            </div>
-        </div>
-    
-        <div class="cards row">
-            <div class="col-sm-6">
-                <img class="product-img">
-                <h2 class="title">Saravana Bhawan</h2>
-                <h5 class="address">New Delhi, 0.4Km</h5>
-            </div>
-            <div class="col-sm-6">
-                <p class="store-point-text">Your<br>Store<br>Points</p>
-                <h1 class="store-point">50</h1>
-                <button class="view-button">View</button>
-            </div>
-        </div>
-    
-        <div class="cards row">
-            <div class="col-sm-6">
-                <img class="product-img">
-                <h2 class="title">Saravana Bhawan</h2>
-                <h5 class="address">New Delhi, 0.4Km</h5>
-            </div>
-            <div class="col-sm-6">
-                <p class="store-point-text">Your<br>Store<br>Points</p>
-                <h1 class="store-point">50</h1>
+                <h1 class="store-point">{{stores[0].point}}</h1>
                 <button class="view-button">View</button>
             </div>
         </div>

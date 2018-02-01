@@ -56,6 +56,10 @@
     font-size: 16px;
 }
 
+.profile-details .name {
+    text-transform: capitalize;
+}
+
 .ad-container {
     margin-top: 20px;
 }

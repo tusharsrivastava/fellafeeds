@@ -4,7 +4,4 @@ app.controller('fellaController', function($scope, $http) {
         $scope.storeDetails = response.data;
         console.log($scope.storeDetails);
     });
-
-    $scope.active = "active";
-
 });

@@ -261,7 +261,7 @@ body * {
     bottom: 0;
     background: #fff;
     width: 100%;
-    box-shadow: 0 -1px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 -1px 25px rgba(0, 0, 0, 0.2);
 }
 
 .checkout h3,
@@ -384,4 +384,18 @@ body * {
     font-weight: 600;
     margin-top: 10px;
     border-radius: 3px;
+}
+
+@media(min-width: 767px) {
+    .cards .cost {
+        margin-top: 40px;
+    }
+
+    .cards .buy-button {
+        margin-top: 18px;
+    }
+
+    .cards.active .buy-button-active {
+        margin-top: 7px;
+    }
 }
