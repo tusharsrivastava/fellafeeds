@@ -1,5 +1,5 @@
 app.controller('fellaController', function($scope, $http,  $window) {
-     token =localStorage.getItem("token");
+    token =localStorage.getItem("token");
     $http.get("http://54.156.18.72/feedbacker/getredeemstore/",{
 //                withCredentials: true,
                 headers: {
@@ -18,22 +18,19 @@ app.controller('fellaController', function($scope, $http,  $window) {
         console.log(err);
     });
 
-
-    
-
     $scope.viewStore = function(storeid) {
-        $window.location.href = '/store.html?id='+storeid;
+        $window.location.href = 'store.html?id='+storeid;
     }
 
     $scope.showHistory = function() {
-        $window.location.href = '/history.html';
+        $window.location.href = 'history.html';
     }
 
     $scope.showCoupons = function() {
-        $window.location.href = '/coupons.html';
+        $window.location.href = 'coupons.html';
     }
 
     $scope.showHome = function() {
-        $window.location.href = '/index.html';
+        $window.location.href = 'index.html';
     }
 });
