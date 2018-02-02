@@ -21,6 +21,6 @@ app.controller('fellaController', function($scope, $http, $window) {
     // }
 
     $scope.showEditProfile = function() {
-        $window.location.href = '/editprofile.html';
+        $window.location.href = 'editprofile.html';
     }
 });
