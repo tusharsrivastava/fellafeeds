@@ -131,7 +131,7 @@ app.controller('fellaController', function($scope, $http, $window) {
     }
 
     $scope.viewHome = function() {
-        $window.location.href = '/index.html';
+        $window.location.href = 'index.html';
     }
 
 });
