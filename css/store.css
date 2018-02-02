@@ -302,8 +302,14 @@ body * {
     margin-bottom: -40px;
 }
 
+@media(max-width: 767px) {
+    .modal-dialog {
+        margin-top: 50%;
+    }
+}
+
 .modal-dialog {
-    margin-top: 50%;
+    margin-top: 15%;
 }
 
 .modal-footer {

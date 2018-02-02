@@ -36,6 +36,26 @@ app.controller('fellaController', function($scope, $http, $window) {
     });
     });
 
+    var url = "http://54.156.18.72/feedbacker/storesproducts/"+$scope.storeId+"/";
+    $scope.data = [
+        {
+            product_id:1,
+            quantity:9
+        }
+    ];
+    $scope.submitCheckout = ()=>{
+        console.log($scope.data);  
+        $http.post(url,$scope.data,{
+            headers : {
+                'Content-Type':'application/json'
+            }
+        }).then((data)=>{
+        //    console.log(data);
+        },(err)=>{
+            console.log(err);
+        })
+    }
+
     // $scope.storeDetails = [
     //     {
     //         "storepoints": [
