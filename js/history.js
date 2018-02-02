@@ -109,15 +109,15 @@ app.controller('fellaController', function($scope, $http, $window) {
 
     
     $scope.showHistory = function() {
-        $window.location.href = '/history.html';
+        $window.location.href = 'history.html';
     }
 
     $scope.showCoupons = function() {
-        $window.location.href = '/coupons.html';
+        $window.location.href = 'coupons.html';
     }
 
     $scope.showHome = function() {
-        $window.location.href = '/index.html';
+        $window.location.href = 'index.html';
     }
 
 });
