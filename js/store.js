@@ -1,17 +1,39 @@
 app.controller('fellaController', function($scope, $http, $window) {
 
     $scope.storeId = 1;
-
-    $http.get("http://54.156.18.72/feedbacker/getredeemstore")
+    token = localStorage.getItem("token");
+    $http.get("http://54.156.18.72/feedbacker/getredeemstore/",{
+//                withCredentials: true,
+                headers: {
+                    'Authorization': 'Token ' + token,
+                    'Content-Type': 'application/json'
+                }
+    })
     .then(function(response) {
         $scope.storeDetails = response.data;
         console.log($scope.storeDetails);
+        $scope.storeDetails[0].storepoints.forEach(element => {
+        if(element.id==$scope.storeId) {
+            $scope.storeName = element.store;
+            console.log($scope.storeName);
+        }
+    });
     });
 
-    $http.get("http://54.156.18.72/feedbacker/storesproducts/"+$scope.storeId+"/")
+    $http.get("http://54.156.18.72/feedbacker/storesproducts/"+$scope.storeId+"/",{
+//                withCredentials: true,
+                headers: {
+                    'Authorization': 'Token ' + token,
+                    'Content-Type': 'application/json'
+                }
+    })
     .then(function(response) {
         $scope.products = response.data;
         console.log($scope.products);
+        $scope.products[0].data.forEach(element => {
+        $scope.buy[element.product_id] = false;
+        $scope.quantity[element.product_id] = 0;
+    });
     });
 
     // $scope.storeDetails = [
@@ -53,21 +75,13 @@ app.controller('fellaController', function($scope, $http, $window) {
     //     }
     // ];
 
-    $scope.storeDetails[0].storepoints.forEach(element => {
-        if(element.id==$scope.storeId) {
-            $scope.storeName = element.store;
-            console.log($scope.storeName);
-        }
-    });
+    
 
     $scope.quantity = 0;
 
     $scope.buy = [];
     $scope.quantity = [];
-    $scope.products[0].data.forEach(element => {
-        $scope.buy[element.product_id] = false;
-        $scope.quantity[element.product_id] = 0;
-    });
+    
 
     $scope.buyClicked = function(id) {
         $scope.buy[id] = true;

@@ -1,7 +1,14 @@
 app.controller('fellaController', function($scope, $http, $window) {
-    $http.get("http://54.156.18.72/feedbacker/userprofile")
+    token = localStorage.getItem("token");
+    $http.get("http://54.156.18.72/feedbacker/userprofile/",{
+//                withCredentials: true,
+                headers: {
+                    'Authorization': 'Token ' + token,
+                    'Content-Type': 'application/json'
+                }
+    })
     .then(function(response) {
-        $scope.profileData = response.data;
+        $scope.profileData = response.data[0];
         console.log($scope.profileData);
     });
 

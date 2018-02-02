@@ -1,74 +1,50 @@
 app.controller('fellaController', function($scope, $http, $window) {
+    token = token = localStorage.getItem("token");
+    
+    function getDate(data){
+      var date = new Date(data);
+      var day = date.getDate(); //Date of the month: 2 in our example
+      var month = date.getMonth()+1; //Month of the Year: 0-based index, so 1 in our example
+      var year = date.getFullYear();
+      if(month<10){
+        month = "0"+month;
+      }
+      return day+"/"+month+"/"+year;
+    }
+     function returnTime(a){
 
-    $http.get("http://54.156.18.72/feedbacker/getredeemstore")
+    let date = new Date(a);
+    if(date.toLocaleTimeString() == "Invalid Date"){
+        return "";
+    }
+    return date.toLocaleTimeString();
+
+} 
+    
+    $http.get("http://54.156.18.72/feedbacker/getredeemstore/",{
+//                withCredentials: true,
+                headers: {
+                    'Authorization': 'Token ' + token,
+                    'Content-Type': 'application/json'
+                }
+    })
     .then(function(response) {
         $scope.storeDetails = response.data;
         console.log($scope.storeDetails);
-    });
-
-    $http.get("http://54.156.18.72/feedbacker/gettransaction")
+        $http.get("http://54.156.18.72/feedbacker/gettransaction/",{
+//                withCredentials: true,
+                headers: {
+                    'Authorization': 'Token ' + token,
+                    'Content-Type': 'application/json'
+                }
+    })
     .then(function(response) {
         $scope.couponData = response.data;
         console.log($scope.couponData);
+            $scope.couponData.forEach(coupon => {
+       coupon.created = getDate(coupon.created) + ', '+returnTime(coupon.created);
     });
-
-    // $scope.storeDetails = [
-    //     {
-    //         "storepoints": [
-    //             {
-    //                 "id" : 1,
-    //                 "store" : "Ravi Bar and Bistro",
-    //                 "point" : 960
-    //             },
-    //             {
-    //                 "id" : 3,
-    //                 "store" : "Infinity Shark",
-    //                 "point" : 1000
-    //             }
-    //         ],
-    //         "totalpoint" : 960
-    //     }
-    // ];
-
-    // $scope.couponData = [
-    //     {
-    //         "id": 5,
-    //         "created": "2018-01-23T09:02:21.2283321Z",
-    //         "modified": "",
-    //         "code": "fpRMQCPw",
-    //         "points": 0,
-    //         "valid_upto": "2018-02-24T09:02:21.2283321Z",
-    //         "redeemed": false,
-    //         "feedbacker": 9278,
-    //         "store": 1
-    //     },
-    //     {
-    //         "id": 6,
-    //         "created": "2018-01-23T09:02:21.2283321Z",
-    //         "modified": "",
-    //         "code": "lXSM8A7S",
-    //         "points": 65,
-    //         "valid_upto": "2018-02-24T09:02:21.2283321Z",
-    //         "redeemed": true,
-    //         "feedbacker": 9278,
-    //         "store": 1
-    //     },
-    //     {
-    //         "id": 7,
-    //         "created": "2018-01-20T09:02:21.2283321Z",
-    //         "modified": "",
-    //         "code": "lXSM8A7S",
-    //         "points": 155,
-    //         "valid_upto": "2018-01-24T09:02:21.2283321Z",
-    //         "redeemed": true,
-    //         "feedbacker": 9278,
-    //         "store": 1
-    //     }
-    // ];
-
-    $scope.couponData.forEach(coupon => {
-        console.log(coupon);
-    });
+         
 
     $scope.couponData.forEach(coupon => {
         $scope.storeDetails[0].storepoints.forEach(element => {
@@ -78,6 +54,12 @@ app.controller('fellaController', function($scope, $http, $window) {
             }
         });
     });
+    });
+
+    });
+
+    
+    
 
     $scope.showHistory = function() {
         $window.location.href = '/history.html';

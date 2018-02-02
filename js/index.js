@@ -1,31 +1,25 @@
 app.controller('fellaController', function($scope, $http,  $window) {
-    $http.get("http://54.156.18.72/feedbacker/getredeemstore")
-    .then(function(response) {
+     token =localStorage.getItem("token");
+    $http.get("http://54.156.18.72/feedbacker/getredeemstore/",{
+//                withCredentials: true,
+                headers: {
+                    'Authorization': 'Token ' + token,
+                    'Content-Type': 'application/json'
+                }
+    }).then((response)=> {
+        
+        console.log(response);  
         $scope.storeDetails = response.data;
-        console.log($scope.storeDetails);
-    });
-
-    // $scope.storeDetails = [
-    //     {
-    //         "storepoints": [
-    //             {
-    //                 "id" : 1,
-    //                 "store" : "Ravi Bar and Bistro",
-    //                 "point" : 960
-    //             },
-    //             {
-    //                 "id" : 3,
-    //                 "store" : "Infinity Shark",
-    //                 "point" : 1000
-    //             }
-    //         ],
-    //         "totalpoint" : 960
-    //     }
-    // ];
-
-    $scope.storeDetails[0].storepoints.forEach(element => {
+        console.log($scope.storeDetails[0]);
+        $scope.storeDetails[0].storepoints.forEach(element => {
         console.log(element.store);
     });
+    },(err)=>{
+        console.log(err);
+    });
+
+
+    
 
     $scope.viewStore = function(storeid) {
         $window.location.href = '/store.html?id='+storeid;

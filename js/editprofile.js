@@ -1,19 +1,16 @@
 app.controller('fellaController', function($scope, $http) {
-    $http.get("http://54.156.18.72/feedbacker/userprofile")
+    token = localStorage.getItem("token");
+    $http.get("http://54.156.18.72/feedbacker/userprofile/",{
+//                withCredentials: true,
+                headers: {
+                    'Authorization': 'Token ' + token,
+                    'Content-Type': 'application/json'
+                }
+    })
     .then(function(response) {
-        $scope.profileData = response.data;
+        $scope.profileData = response.data[0];
         console.log($scope.profileData);
-    });
-
-    // $scope.profileData = {
-    //     "dob": "2018-01-10",
-    //     "phone": "7999999999",
-    //     "name": "nishant",
-    //     "anni": "2018-10-10",
-    //     "email": "demoemail@demodomain.com"
-    // }
-
-    $scope.dob = $scope.profileData.dob.split("-");
+         $scope.dob = $scope.profileData.dob.split("-");
     $scope.anni = $scope.profileData.anni.split("-");
 
     $scope.dobDay = $scope.dob[2];
@@ -42,5 +39,9 @@ app.controller('fellaController', function($scope, $http) {
             $scope.day[i-1] = i;
         }
     }
+    });
+
+
+   
 
 });
