@@ -40,7 +40,7 @@ app.controller('fellaController', function($scope, $http, $window) {
         $scope.transactions = response.data;
         console.log($scope.transactions);
             $scope.transactions.forEach(trans => {
-        $scope.storeDetails[0].storepoints.forEach(element => {
+            $scope.storeDetails[0].storepoints.forEach(element => {
             if(element.id==trans.id) {
                 trans.storeName = element.store;
                 console.log("store: ", element.store);

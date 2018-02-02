@@ -11,9 +11,9 @@ app.controller('loginController', function($scope, $http, $window) {
                 'Content-Type':'application/json'
             }
         }).then((data)=>{
-//            console.log(data);
+           console.log(data);
             localStorage.setItem("token",data.data.key);
-            $window.location.href = '/index.html';
+            $window.location.href = '/home.html';
         },(err)=>{
             console.log(err);
         })
